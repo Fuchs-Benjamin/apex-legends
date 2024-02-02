@@ -1,0 +1,68 @@
+---
+import { Image } from "astro:assets";
+import tactImg from "../assets/img/icons/ability1.png";
+import skillImg from "../assets/img/icons/ability2.png";
+import ultImg from "../assets/img/icons/ability3.png";
+const { type, title, description } = Astro.props;
+
+let img, typetext;
+if (type === "tact") {
+    img = tactImg;
+    typetext = "Tactical skills";
+}
+if (type === "skill") {
+    img = skillImg;
+    typetext = "Passive skills";
+}
+if (type === "ult") {
+    img = ultImg;
+    typetext = "Ultimate";
+}
+---
+
+<article>
+    {img && <Image src={img} alt={title} />}
+    {typetext && <h2>{typetext}</h2>}
+    <h3>{title}</h3>
+    <p>{description}</p>
+</article>
+
+<style lang="scss">
+    article {
+        position: relative;
+        z-index: 0;
+        color: white;
+        padding: 2rem;
+        padding-top: 0;
+        min-height: calc(520px + 5rem);
+        text-align: center;
+        h2 {
+            color: #c2dc49;
+            font-size: 2.5rem;
+            font-weight: 400;
+            margin-bottom: 1.7rem;
+        }
+        h3 {
+            font-size: 2rem;
+            margin-bottom: 1.7rem;
+        }
+        p {
+            font-size: 1.2rem;
+            max-width: 308px;
+            margin-inline: auto;
+        }
+        &::after {
+            position: absolute;
+            inset: 0;
+            content: "";
+            background-color: var(--c-bg);
+            z-index: -1;
+            top: 5rem;
+            border-radius: 10px;
+        }
+        :global(img) {
+            height: 230px;
+            object-fit: contain;
+        }
+    }
+</style>

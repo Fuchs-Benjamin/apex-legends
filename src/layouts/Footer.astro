@@ -1,0 +1,26 @@
+---
+import { Image } from "astro:assets";
+import logo from "../assets/img/icons/footer-icon.png";
+---
+
+<footer>
+    <p>Lorem ipsum, dolor id impedit atque quaerat. Dolores, ducimus.</p>
+    <Image src={logo} alt="logo" />
+</footer>
+
+<style>
+    footer {
+        display: flex;
+        flex-direction: column;
+        gap: 100px;
+        background-color: #252525;
+        padding: 200px 0;
+        align-items: center;
+    }
+    p {
+        color: white;
+        text-align: center;
+        font-style: italic;
+        font-size: 25px;
+    }
+</style>

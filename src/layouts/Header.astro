@@ -1,0 +1,23 @@
+---
+import SiteLogo from "../components/SiteLogo.astro";
+import SiteNav from "../components/SiteNav.astro";
+---
+
+<header>
+    <a href="/">
+        <SiteLogo />
+    </a>
+    <SiteNav />
+</header>
+
+<style>
+    header {
+        background-color: var(--c-bg);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding-inline: 2rem;
+        border-bottom: 3px solid white;
+    }
+</style>

@@ -1,0 +1,36 @@
+---
+import CardAbility from "../components/CardAbility.astro";
+import bg from "../assets/img/images/section3-bg.png";
+---
+
+<section style={`background-image: url(${bg.src});`}>
+    <div class="container">
+        <CardAbility
+            type="tact"
+            title="Stimulator"
+            description="Увеличивает скорость движения на 30% на 6 сек, но тратит здоровье при активации"
+        />
+        <CardAbility
+            type="skill"
+            title="Regeneration"
+            description="Постепенно восстанавливает здоровье вне боя"
+        />
+        <CardAbility
+            type="ult"
+            title="Bounce"
+            description="Размещает портативный батут, который подбрасывает союзников в воздух"
+        />
+    </div>
+</section>
+
+<style>
+    .container {
+        display: flex;
+        justify-content: space-between;
+        gap: 4rem;
+    }
+    section {
+        padding-block: 4rem;
+        background: center/cover no-repeat;
+    }
+</style>
