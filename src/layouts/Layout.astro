@@ -12,8 +12,8 @@ import "../styles/main.css";
 import Header from "./Header.astro";
 import Footer from "./Footer.astro";
 const { title } = Astro.props;
-const canonicalURL = new URL(Astro.url.pathname, Astro.url);
-const socialImageURL = new URL("/og-img.png", Astro.url);
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const socialImageURL = new URL("/og-img.png", Astro.site);
 ---
 
 <html lang="en">
