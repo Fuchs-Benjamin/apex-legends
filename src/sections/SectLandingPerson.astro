@@ -43,6 +43,7 @@ const optbg = await getImage({ src: myBackground, format: "webp" });
 <style lang="scss">
     section {
         display: flex;
+        flex-direction: column;
         color: white;
         background-size: cover;
         background-position: center;
@@ -116,5 +117,10 @@ const optbg = await getImage({ src: myBackground, format: "webp" });
         align-content: center;
         gap: 30px;
         font-size: 25px;
+    }
+    @media (min-width: 1024px) {
+        section {
+            flex-direction: row;
+        }
     }
 </style>

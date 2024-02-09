@@ -1,26 +1,35 @@
 ---
-
+const { onMobile, onHeader } = Astro.props;
 ---
 
-<nav>
+<nav class:list={[onMobile ? "onMobile" : "", onHeader ? "onHeader" : ""]}>
     <a href="">info</a>
     <a href="">abilities</a>
     <a href="">publishing</a>
 </nav>
 
-<style>
+<style lang="scss">
     nav {
-        display: flex;
         gap: 2rem;
-        padding-block: 2rem;
+        a {
+            color: white;
+            font-size: 2rem;
+            line-height: 1;
+            transition: 0.3s;
+        }
     }
-    a {
-        color: white;
-        font-size: 2rem;
-        line-height: 1;
-        transition: 0.3s;
+    nav.onHeader {
+        display: none;
+        padding-block: 1rem;
+        a:hover {
+            color: #c2dc49;
+        }
+        @media (min-width: 768px) {
+            display: flex;
+        }
     }
-    a:hover {
-        color: #c2dc49;
+    nav.onMobile {
+        display: flex;
+        flex-direction: column;
     }
 </style>

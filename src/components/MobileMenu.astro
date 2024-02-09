@@ -1,0 +1,37 @@
+---
+import SiteNav from "./SiteNav.astro";
+---
+
+<script>
+    const menuToggler = document.querySelector("[data-menu-toggler]");
+    menuToggler.onclick = handleClick;
+    const mobileMenu = document.querySelector("[data-mobile-menu]");
+
+    function handleClick(event) {
+        mobileMenu.classList.toggle("active");
+        menuToggler.classList.toggle("open");
+    }
+</script>
+
+<div class="mobile-menu" data-mobile-menu>
+    <SiteNav onMobile />
+</div>
+<style lang="scss">
+    .mobile-menu {
+        position: fixed;
+        inset: 0;
+        right: -100%;
+        left: auto;
+        width: min(500px, 90%);
+        padding: 1rem;
+        padding-top: calc(1rem + 61px);
+        background-color: var(--c-bg);
+        transition: 0.3s;
+        &.active {
+            right: 0;
+        }
+        @media (min-width: 768px) {
+            display: none;
+        }
+    }
+</style>

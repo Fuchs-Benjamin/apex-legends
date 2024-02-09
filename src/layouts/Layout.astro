@@ -11,6 +11,7 @@ import "@fontsource/roboto/900.css";
 import "../styles/main.css";
 import Header from "./Header.astro";
 import Footer from "./Footer.astro";
+import MobileMenu from "../components/MobileMenu.astro";
 const { title } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const socialImageURL = new URL("/og-img.png", Astro.site);
@@ -34,5 +35,6 @@ const socialImageURL = new URL("/og-img.png", Astro.site);
         <Header />
         <slot />
         <Footer />
+        <MobileMenu />
     </body>
 </html>
